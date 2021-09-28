@@ -4,7 +4,14 @@ import java.sql.Timestamp;
 
 public class MealRecords {
 
-    private int mid;
+    public MealRecords( int sid, int meal_cost, String meal_store) {
+		super();
+		this.sid = sid;
+		this.meal_cost = meal_cost;
+		this.meal_store = meal_store;
+	}
+
+	private int mid;
     private int sid;
     private int meal_cost;
     private Timestamp meal_timestamp;
