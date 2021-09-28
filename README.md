@@ -1,6 +1,14 @@
 # Employee Meal Tracking Assistant
 
-<img src="docs/images/cover_image.jpg" height="500" width="800"/> 
+
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   ![GitHub language count](https://img.shields.io/github/languages/count/HarshBathija/Employee-Meal-Tracking-Assistant)
+
+
+
+
+<img src="docs/images/cover_image.jpg" height="300" width="600"/> 
 
 ---
 
