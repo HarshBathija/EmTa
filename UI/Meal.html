@@ -1,0 +1,80 @@
+<html ng-app='scartApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Campus Enterprise Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<title>Cart</title>
+</head>
+<style>
+    table, th, td {
+  border: 1px solid white;
+  margin: auto;
+  padding: 20px;
+  color:white;
+}
+
+  input{
+    color: black;
+  }
+
+  button{
+    color: black;
+  }
+  body {
+     background-image: url('food-menu-background.jpeg');
+  }
+</style>
+<body ng-controller='SCartController'>
+<h1 style="padding-left: 40%; color: white;">Food Menu</h1>
+<div>
+<table >
+<tr style="padding: 20px;">
+<td><b>Product Name</b></td>
+<td><b>Quantity</b></td>
+<td><b>Price</b></td>
+<td><b>Total Price</b></td>
+<td><b>Operation</b></td>
+</tr>
+<tr ng-repeat="item in items">
+<td>{{item.Name}}</td>
+<td><input ng-model='item.quantity'></td>
+<td>{{item.price | currency}}</td>
+<td> {{item.price * item.quantity | currency}}</td>
+<td><button ng-click="remove($number)">Add to cart</button></td>
+</tr>
+</table>
+</div>
+<script>
+var sapp = angular.module('scartApp', []);
+sapp.controller('SCartController', ['$scope', function($scope) {
+$scope.items = [
+{Name: 'French Fries', quantity: 1, price: 3},
+{Name: 'Spinach Veggie Wrap', quantity: 1, price: 5},
+{Name: 'Garden Hummus', quantity:1, price: 5},
+{Name: 'Black Bean Burger', quantity:1, price: 7},
+{Name: 'Veggie Bowl', quantity: 1, price: 8},
+{Name: 'Jasons tots', quantity: 1, price: 5},
+{Name: 'Soft Drink', quantity:1, price: 2.5},
+{Name: 'Black Bean Burger', quantity:1, price: 7}
+];
+
+$scope.remove = function(number) {
+$scope.items.splice(number, 1);
+}
+}]);
+</script>
+</body>
+</html><button ng-click="remove($index)" style="margin-left: 50%; margin-top: 1%;">Add</button>
+</div>
+<script src="angular.js"></script>
+<script>
+function CartController($scope) {
+$scope.remove = function(index) {
+$scope.items.splice(index, 1);
+}
+}
+</script>
+</body>
+</html>
