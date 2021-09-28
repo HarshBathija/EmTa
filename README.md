@@ -1,4 +1,4 @@
-# NCStateDining
+# EmployeeMealTrackingAssistant
 
 ### [Live Site]()
 ---
