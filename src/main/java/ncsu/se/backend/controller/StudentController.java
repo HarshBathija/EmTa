@@ -16,6 +16,7 @@ import ncsu.se.backend.model.MealRecords;
 import ncsu.se.backend.model.StudentDetails;
 import ncsu.se.backend.repository.StudentRepository;
 import ncsu.se.backend.service.StudentService;
+import ncsu.se.backend.model.DefaulterDetails;
 
 @RestController
 public class StudentController {
@@ -40,9 +41,9 @@ public class StudentController {
 
 	@CrossOrigin
 	@GetMapping("/getDefaultersList")
-	public String getDefaultersList() {
-		studentrepo.generateDefaultersStudents();
-		return "generated successfully";
+	public List<DefaulterDetails> getDefaultersList() {
+		return studentrepo.generateDefaultersStudents();
+
 	}
 
 }

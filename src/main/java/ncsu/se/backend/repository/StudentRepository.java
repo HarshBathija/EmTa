@@ -17,6 +17,7 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import ncsu.se.backend.model.DefaulterDetails;
 import ncsu.se.backend.model.MealRecords;
 import ncsu.se.backend.model.StudentDetails;
 
@@ -60,16 +61,36 @@ public class StudentRepository {
 		return "Added Meal successfully";
 	}
 
-	public void generateDefaultersStudents() {
+	public List<DefaulterDetails> generateDefaultersStudents() {
+		List<Integer> defaulterIds = getDefaulterIds();
+		DefaulterDetails dd;
+		String selectDefaultSql = "select * from student_detail";
 
-		List<Integer> ids = getIdsFromMealInfo();
+		String sql = "select * from student_detail where id = ?";
+		return jdbctemplate.query(selectDefaultSql, new RowMapper<DefaulterDetails>() {
 
-		for (int id : ids) {
-			if (!checkShiftVisited(id) || fetchTotalHoursForId(id) > 20) {
-				System.out.println(id);
+			@Override
+			public DefaulterDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
+				DefaulterDetails dd = new DefaulterDetails();
+				if (defaulterIds.contains(rs.getInt("id"))) {
+					dd.setSid(rs.getInt("id"));
+					dd.setName(rs.getString("first_name") + " " + rs.getString("last_name"));
+					dd.setEmployee_head(rs.getString("employer_name"));
+					dd.setEmployee_store(rs.getString("employed_store"));
+					if (!checkShiftVisited(dd.getSid()) && fetchTotalHoursForId(dd.getSid()) > 20) {
+						dd.setDefaulterReason("Violated all the rules");
+					} else if (!checkShiftVisited(dd.getSid())) {
+						dd.setDefaulterReason("No Shift Visited");
+					} else {
+						dd.setDefaulterReason("Weekly limit of hours crossed");
+					}
+
+					return dd;
+				} else
+					return null;
+
 			}
-
-		}
+		});
 	}
 
 	public int fetchTotalHoursForId(int sid) {
@@ -113,4 +134,18 @@ public class StudentRepository {
 		return false;
 	}
 
+	public List<Integer> getDefaulterIds() {
+		List<Integer> ids = getIdsFromMealInfo();
+		List<Integer> defaulterIds = new ArrayList();
+
+		for (int id : ids) {
+			if (!checkShiftVisited(id) || fetchTotalHoursForId(id) > 20) {
+				defaulterIds.add(id);
+			}
+
+		}
+
+		return defaulterIds;
+
+	}
 }
