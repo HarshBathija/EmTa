@@ -11,6 +11,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 
+[![DOI](https://zenodo.org/badge/409424195.svg)](https://zenodo.org/badge/latestdoi/409424195)
 
 <img src="docs/images/cover_image.jpg" height="300" width="600"/> 
 
