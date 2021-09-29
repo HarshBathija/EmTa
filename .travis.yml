@@ -7,26 +7,11 @@ branches:
   only:
   - master
 
-stages:
-  - name: build
-    if: type = pull_request
-  - name: deploy
-    if: branch != master AND type != pull_request
-
-services:
-  - mysql
-
 jobs:
   include:
     - stage: build
       script:
         - ./gradlew build
-        
-    - stage: deploy
-      before_install:
-        - echo -e "RUNNING"
-      script:
-        - java -jar /build/libs/demo-0.0.1-SNAPSHOT.jar
 
 notifications:
   email:
