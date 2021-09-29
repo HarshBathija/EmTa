@@ -12,7 +12,8 @@
   border: 1px solid white;
   margin: auto;
   padding: 20px;
-  color:white;
+  color: white;
+  
 }
 
   input{
@@ -25,8 +26,50 @@
   body {
      background-image: url('food-menu-background.jpeg');
   }
+
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #161656;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #16b5ae;
+}
 </style>
+
 <body ng-controller='SCartController'>
+  <ul>
+    <li><a href="index.html">Login</a></li>
+    <li><a href="Employee_Details.html">Employee Details</a></li>
+    <li><a class="active" href="Meal.html">Meal Selection</a></li>
+    <li><a href="#about">Defaulters</a></li>
+  </ul>
+
+
+  <form style="color: white; padding-left: 40%; padding-top: 5%;">
+    <label for="sid">Student ID:</label> 
+    <input type="text" id="SID" name="sid"><br><br>
+    <label for="Sname">Store name:</label>
+    <input type="text" id="SName" name="Sname">
+  </form>
+  
+
 <h1 style="padding-left: 40%; color: white;">Food Menu</h1>
 <div>
 <table >
@@ -42,7 +85,7 @@
 <td><input ng-model='item.quantity'></td>
 <td>{{item.price | currency}}</td>
 <td> {{item.price * item.quantity | currency}}</td>
-<td><button ng-click="remove($number)">Add to cart</button></td>
+<td><button ng-click="add($number)">Add to cart</button></td>
 </tr>
 </table>
 </div>
@@ -60,21 +103,19 @@ $scope.items = [
 {Name: 'Black Bean Burger', quantity:1, price: 7}
 ];
 
-$scope.remove = function(number) {
-$scope.items.splice(number, 1);
+$scope.add = function(number) {
+  $scope.items.data.push({
+      price: item.price * item.quantity
+    });
 }
 }]);
 </script>
 </body>
-</html><button ng-click="remove($index)" style="margin-left: 50%; margin-top: 1%;">Add</button>
+</html><button ng-click="add($index)" style="margin-left: 50%; margin-top: 1%;">Add</button>
 </div>
 <script src="angular.js"></script>
 <script>
-function CartController($scope) {
-$scope.remove = function(index) {
-$scope.items.splice(index, 1);
-}
-}
+
 </script>
 </body>
 </html>

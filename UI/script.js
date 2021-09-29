@@ -43,6 +43,19 @@
     };
     
   });
+
+  app.controller("employeeCtrl", function ($scope,$http) {
+   $http.get('https://meal-tracking-assistant.herokuapp.com/studentDetails?sid=200099333')
+   .success(function(data){
+     console.log(data)
+     $scope.studentDetails = data;
+   })
+   .error(function(data,status){
+     console.error('Fail to load data', status, data);
+     $scope.studentDetails = { };
+   });
+ });
+  
   
   app.controller('HomeController', function($scope, $rootScope, $stateParams, $state, LoginService) {
     $rootScope.title = "AngularJS Login Sample";

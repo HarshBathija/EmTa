@@ -6,9 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 
+<script type="text/javascript" src="employeeController.js"></script>
+
+<style>
+  #JB{
+    display: none;
+    background-color: #e6f4e6;
+    width: 400px;
+    height: 300px;
+    margin-left: 35%;
+    padding-left: 3%;
+    border-radius: 5%;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #161656;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #16b5ae;
+}
+</style>
 </head>
 <body style="background-image: url('2library001.jpeg');">
 <!-- partial:index.partial.html -->
+
+
+<ul>
+  <li><a  href="index.html">Login</a></li>
+  <li><a class="active" href="Employee_Details.html">Employee Details</a></li>
+  <li><a href="Meal.html">Meal Selection</a></li>
+  <li><a href="#about">Defaulters</a></li>
+</ul>
+
+
+
 <div class="container" ng-app="myApp" style = "text-align:center">
   <div style="padding-top:5%">
     <div ng-init="myVar = 'ncstate-brick-2x1-red.png'">
@@ -26,7 +73,7 @@
   
   <script type="text/ng-template" id="login.html">
     <div class="col-md-12" style = "margin: 5%;padding-left: 25%;">
-      <h3 style = "padding-right: 45%"> Employee - Dining Login Page</h3>
+      <h3 style = "padding-right: 45%"> Employee Details</h3>
       
       <form ng-submit="formSubmit()" class="form" style = "padding-left: 10%">
         <div class="col-md-4">
@@ -34,32 +81,41 @@
             <input type="text" class="form-control" ng-model="StudentID" placeholder="StudentID" required=""/>
           </div> 
 
-          <div class="form-group" style= "padding-left: 10%">
-            <input type="password" class="form-control" ng-model="EmployeeName"  placeholder="EmployeeName" required=""/>
+          <div style= "padding-left: 15%">
+            <button type="submit" class="btn btn-success" onclick="toggleDiv()">Fetch Details</button>
           </div>
-
-          <div class="form-group" style= "padding-left: 10%">
-            <input type="password" class="form-control" ng-model="Store"  placeholder="Store" required=""/>
-          </div>
-
-          <div class="form-group" style= "padding-left: 15%">
-            <button type="submit" class="btn btn-success">Login</button>
-            <span class="text-danger">{{ error }}</span>
-          </div>
-
         </div>
       </form>
     </div>
   </script>
   
-  <script type="text/ng-template" id="home.html">
-    <div class="col-md-12">
-      <h3>Home Page</h3>
-    
-      <a ui-sref="login">Back</a>
-    </div>
-  </script>
+  
 </div>
+
+
+<div id ="JB">
+
+  <div><p>Employee Information</p></div>
+  <div ng-controller="employeeCtrl">
+
+  <div ng-repeat="student in studentDetails">
+  <P><b>Employer Name:</b>{{student.sid}}</P><br>
+  <P><b>Student ID:</b>{{student.sid}}</P><br>
+  <P><b>First Name:</b>{{student.sid}}</P><br>
+  <P><b>Last Name:</b>{{student.sid}}</P><br>
+  <P><b>Employeed Store:</b>{{student.sid}}</P><br>
+  <P><b>Schedule:</b>{{student.sid}}</P><br>
+  </div>
+  </div>div
+</div>
+
+
+<script>
+  function toggleDiv() {
+    var div = document.getElementById("JB");
+    div.style.display = div.style.display == "none" ? "block" : "none";
+}
+</script>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
