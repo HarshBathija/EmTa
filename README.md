@@ -3,9 +3,13 @@
 
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   ![GitHub language count](https://img.shields.io/github/languages/count/HarshBathija/Employee-Meal-Tracking-Assistant)
-
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   
+![GitHub language count](https://img.shields.io/github/languages/count/HarshBathija/Employee-Meal-Tracking-Assistant)
+[![GitHub commits](https://badgen.net/github/last-commit/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
+[![GitHub issues](https://img.shields.io/github/issues/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
+[![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 
 
 <img src="docs/images/cover_image.jpg" height="300" width="600"/> 
@@ -14,8 +18,8 @@
 
 # Description
 
-This is a automative system made for University's Dining department to keep track of the employee meals through a check on their clock in, clock out time and no of hours worked.
-The system provides administrators with a list of employees who didn't follow their meal rules.
+This project is a automative system designed for the University's Dining department to keep track of the employee meals, through a check on their clock in, clock out time and no of working hours.
+The system provides the Administrators' with a list of employees who did not follow their dining meal rules.
 
 ---
 
@@ -30,11 +34,13 @@ The below video will give a walkthrough of our application.
 
 
 ## TechStack
-<img src="docs/images/AngularJS-Shield.svg" width="50"/> 
-<img src="https://brandslogos.com/wp-content/uploads/images/large/spring-logo.png" width="50"/>
-<img src="docs/images/postgre.png" width="50"/> 
+<img src="https://brandslogos.com/wp-content/uploads/images/large/spring-logo.png" width="50"/> <img src="docs/images/postgre.png" width="50"/> <img src="docs/images/AngularJS-Shield.svg" width="50"/>
 
 <br>
+
+<p> Java Spring </p>
+<p> PostGreSql </p>
+<p> Angular </p>
 
 ---
 
@@ -91,17 +97,26 @@ GET localhost:8080/healthCheck
 Response :- "App is Running"
 ```
 
+---
 
+# Authors
+
+1. Aditya Ravikant Jadhav (ajadhav3@ncsu.edu)
+2. Harsh Vijay Bathija (hbathij@ncsu.edu)
+3. Ashritha Bommagani (abommag@ncsu.edu)
+4. Abhishek Arvindkumar Upadhyay (aaupadhy@ncsu.edu)
+5. Akash Mukesh Sanghani (amsangha@ncsu.edu)
 
 ---
 
 # Contribution
+Please see our CONTRIBUTING.md for instructions on how to contribute to the repository and assist us in improving the tracking system.
 
 ---
 
 # License
 
-
+This project is licensed under the MIT License
 
 
 
