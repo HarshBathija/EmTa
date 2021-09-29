@@ -3,7 +3,9 @@
 
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+[![DOI](https://zenodo.org/badge/409424195.svg)](https://zenodo.org/badge/latestdoi/409424195)
+
 ![GitHub language count](https://img.shields.io/github/languages/count/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub commits](https://badgen.net/github/last-commit/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
@@ -11,7 +13,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 
-[![DOI](https://zenodo.org/badge/409424195.svg)](https://zenodo.org/badge/latestdoi/409424195)
 
 <img src="docs/images/cover_image.jpg" height="300" width="600"/> 
 
@@ -35,13 +36,16 @@ The below video will give a walkthrough of our application.
 
 
 ## TechStack
-<img src="https://brandslogos.com/wp-content/uploads/images/large/spring-logo.png" width="50"/> <img src="docs/images/postgre.png" width="50"/> <img src="docs/images/AngularJS-Shield.svg" width="50"/>
+<img src="https://brandslogos.com/wp-content/uploads/images/large/spring-logo.png" width="50"/> <img src="docs/images/postgre.png" width="50"/> <img src="docs/images/AngularJS-Shield.svg" width="50"/> <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" width = "50"/> <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" width = "50"/> <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/11/javascript_logo-768x873.png" width = "50"/>
 
 <br>
 
 <p> Java Spring </p>
 <p> PostGreSql </p>
 <p> Angular </p>
+<p> HTML </p>
+<p> CSS </p>
+<p> JavaScript </p>
 
 ---
 
