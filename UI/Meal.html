@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script type="text/javascript" src="Javascript/SCartController.js"></script>
+<script type="text/javascript" src="Controllers/SCartController.js"></script>
 <title>Cart</title>
 </head>
 <style>
@@ -81,7 +81,6 @@ li a:hover {
 
 <body ng-controller='SCartController'>
   <ul>
-    <li><a href="index.html">Login</a></li>
     <li><a href="Employee_Details.html">Employee Details</a></li>
     <li><a class="active" href="Meal.html">Meal Selection</a></li>
     <li><a href="Defaulter.html">Defaulters</a></li>
@@ -172,7 +171,7 @@ $http.post("https://meal-tracking-assistant.herokuapp.com/updateMealRecord", dat
 </body>
 </html><button class ="button button2"ng-click="send(SID,total,SName,$http)" style="margin-left: 50%; margin-top: 1%;">Add</button>
 </div>
-<script src="Javascript/angular.js"></script>
+<script src="Controllers/angular.js"></script>
 <script>
 
 </script>
