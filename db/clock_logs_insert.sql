@@ -42,3 +42,12 @@ VALUES ('200055555', '2021-09-22 12:30:00', '2021-09-22 18:00:29', '6');
 
 INSERT INTO clock_logs(id, clock_in, clock_out, total_hours)
 VALUES ('200055555', '2021-09-24 07:00:57', '2021-09-24 13:00:29', '21');
+
+INSERT INTO clock_logs(id, clock_in, clock_out, total_hours)
+VALUES ('200011555', '2021-09-23 08:00:57', '2021-09-23 13:00:50', '25');
+
+INSERT INTO clock_logs(id, clock_in, clock_out, total_hours)
+VALUES ('200022555', '2021-09-24 07:00:57', '2021-09-24 13:00:19', '20.5');
+
+INSERT INTO clock_logs(id, clock_in, clock_out, total_hours)
+VALUES ('200033555', '2021-09-25 17:00:57', '2021-09-25 19:00:00', '19');
