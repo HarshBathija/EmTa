@@ -27,3 +27,12 @@ VALUES ('200088555', 'April', 'Clinton', 'Jasons Deli', 'Tiffany James', '{ "Mon
 
 INSERT INTO student_detail(id, first_name, last_name, employed_store, employer_name, schedule)
 VALUES ('200055555', 'Hillory', 'Stankovic', 'Port City Java', 'Monica', '{ "Tuesday" : "11.30-19.30", "Wednesday" : "12.30-18.30", "Friday" : "7.00-13.00" }');
+
+INSERT INTO student_detail(id, first_name, last_name, employed_store, employer_name, schedule)
+VALUES ('200011555', 'Lucifer', 'Morningstar', 'Port City Java', 'Monica', '{ "Monday" : "11.30-19.30", "Wednesday" : "12.30-18.30", "Friday" : "7.00-13.00" }');
+
+INSERT INTO student_detail(id, first_name, last_name, employed_store, employer_name, schedule)
+VALUES ('200022555', 'Chloe', 'Decker', 'Port City Java', 'Monica', '{ "Saturday" : "11.30-19.30", "Sunday" : "12.30-18.30", "Monday" : "7.00-13.00" }');
+
+INSERT INTO student_detail(id, first_name, last_name, employed_store, employer_name, schedule)
+VALUES ('200033555', 'Linda', 'Blake', 'Starbucks', 'Clarissa Hopkins', '{ "Saturday" : "11.30-19.30", "Sunday" : "12.30-18.30", "Monday" : "7.00-13.00" }');

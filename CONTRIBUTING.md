@@ -18,7 +18,6 @@ We  would really appreciate that you follow the Code of conduct guidelines [CODE
 - [Compare and review changes](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits) before creating a push request.
 - [Create a push request](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/pushing-changes-to-github) to       merge your branch and changes in it into master branch in order to avoid discrepancies.
 - Update the [README.md](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/README.md) accordingly by implying new installation guidelines if any.
-- Update the [requirements.txt]() file to showcase the new dependencies added if any.
 - Follow the directory structure to order coding files or images to keep the look of the repository professional.
 
 
