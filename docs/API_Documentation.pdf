@@ -1,0 +1,73 @@
+Below is the API Documentation for our application :-
+
+
+1.
+Request Method :- GET
+Request Path :- /healthCheck
+Response :- "App is Running"
+Error Response :- App is Down so need to check the deployment issue
+
+2.
+Request Method :- GET
+Request Path :- /getStudentDetails
+Request Query Params :- sid=200099333
+Response :- 
+If Present:
+    {
+        "id": 200099333,
+        "first_name": "John",
+        "last_name": "Doe",
+        "employed_store": "Starbucks",
+        "employer_name": "Clarissa Hopkins",
+        "schedule": "{ \"Monday\" : \"6.00-12.00\", \"Tuesday\" : \"12.00-18.00\", \"Thursday\" : \"9.00-12.00\" }"
+    }
+IF not Present
+        {}
+
+3. 
+Request Method :- POST
+Request Path :- /updateMealRecord
+Request Body :-
+Response :-
+    {
+        "sid":200099333,
+        "meal_cost":6.78,
+        "meal_store":"JasonDeli"
+    }
+Error Response :-
+    {
+        "error" : "Couldn't add the meal"
+    }
+
+4. 
+Request Method :- GET
+Request Path :- /getDefaultersList
+Response :- 
+If Shift not visited:
+    {
+        "sid": 200088444,
+        "name": "Elijah Tapia",
+        "dept": null,
+        "employee_store": "Starbucks",
+        "employee_head": "Clarissa Hopkins",
+        "defaulterReason": "No Shift Visited"
+    }
+IF beyond limited hours of week:
+   {
+        "sid": 200055555,
+        "name": "Hillory Stankovic",
+        "dept": null,
+        "employee_store": "Port City Java",
+        "employee_head": "Monica",
+        "defaulterReason": "Weekly limit of hours crossed"
+    }
+If both the conditions satisfied
+   {
+        "sid": 200055555,
+        "name": "Hillory Stankovic",
+        "dept": null,
+        "employee_store": "Port City Java",
+        "employee_head": "Monica",
+        "defaulterReason": "Violated all the rules"
+    }
+

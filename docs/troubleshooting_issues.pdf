@@ -1,0 +1,20 @@
+Below are the major issues which we faced while building this application :-
+
+1. Spring boot version compatibility with gradle version
+    Refer to build.gradle for the versions we used
+    https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/build.gradle
+
+2. PostgreSql compatibility issue with spring boot
+    Refer to PostGreSql client version in build.gradle
+    https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/build.gradle
+
+3. Docker build image and containerization issues
+    Refer to the Dockerfile 
+    https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/Dockerfile
+
+4. Heroku deployment issues
+    Refer to the ProcFile
+    https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/Procfile
+    and Heroku Documentation for spring boot application deployment
+    https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku
+
