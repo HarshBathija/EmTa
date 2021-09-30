@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 [![DOI](https://zenodo.org/badge/409424195.svg)](https://zenodo.org/badge/latestdoi/409424195)
 
-[![Action Status](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/workflows/Manual Action/badge.svg)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions)
+[![Manual Action](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions/workflows/release.yml/badge.svg)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions/workflows/release.yml)
 ![GitHub language count](https://img.shields.io/github/languages/count/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub commits](https://badgen.net/github/last-commit/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
@@ -21,8 +21,10 @@
 
 # Description
 
-This project is a automative system designed for the University's Dining department to keep track of the employee meals, through a check on their clock in, clock out time and no of working hours.
-The system provides the Administrators' with a list of employees who did not follow their dining meal rules.
+This project is an automated system designed for the University’s Dining Department to keep track of the employee’s meals, through a check on their clock-in time, clock-out time and number of working hours per week.
+
+This system provides the administrator with the list of employees who did not follow their respective dining meal rules.
+
 
 ---
 
