@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StudentDetails.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">ncsu.se.backend.model</a> &gt; <span class="el_source">StudentDetails.java</span></div><h1>StudentDetails.java</h1><pre class="source lang-java linenums">package ncsu.se.backend.model;
+
+public class StudentDetails {
+
+	private int id;
+	private String first_name;
+	private String last_name;
+	private String employed_store;
+	private String employer_name;
+	private String schedule;
+
+	public int getId() {
+<span class="fc" id="L13">		return id;</span>
+	}
+
+	public StudentDetails(int id, String first_name, String last_name, String employed_store, String employer_name,
+<span class="nc" id="L17">			String schedule) {</span>
+<span class="nc" id="L18">		this.id = id;</span>
+<span class="nc" id="L19">		this.first_name = first_name;</span>
+<span class="nc" id="L20">		this.last_name = last_name;</span>
+<span class="nc" id="L21">		this.employed_store = employed_store;</span>
+<span class="nc" id="L22">		this.employer_name = employer_name;</span>
+<span class="nc" id="L23">		this.schedule = schedule;</span>
+<span class="nc" id="L24">	}</span>
+
+	public void setId(int id) {
+<span class="fc" id="L27">		this.id = id;</span>
+<span class="fc" id="L28">	}</span>
+
+	public String getFirst_name() {
+<span class="nc" id="L31">		return first_name;</span>
+	}
+
+	public void setFirst_name(String first_name) {
+<span class="fc" id="L35">		this.first_name = first_name;</span>
+<span class="fc" id="L36">	}</span>
+
+	public String getLast_name() {
+<span class="nc" id="L39">		return last_name;</span>
+	}
+
+<span class="fc" id="L42">	public StudentDetails() {</span>
+<span class="fc" id="L43">	}</span>
+
+	public void setLast_name(String last_name) {
+<span class="fc" id="L46">		this.last_name = last_name;</span>
+<span class="fc" id="L47">	}</span>
+
+	public String getEmployed_store() {
+<span class="nc" id="L50">		return employed_store;</span>
+	}
+
+	public void setEmployed_store(String employed_store) {
+<span class="fc" id="L54">		this.employed_store = employed_store;</span>
+<span class="fc" id="L55">	}</span>
+
+	public String getEmployer_name() {
+<span class="nc" id="L58">		return employer_name;</span>
+	}
+
+	public void setEmployer_name(String employer_name) {
+<span class="fc" id="L62">		this.employer_name = employer_name;</span>
+<span class="fc" id="L63">	}</span>
+
+	public String getSchedule() {
+<span class="nc" id="L66">		return schedule;</span>
+	}
+
+	public void setSchedule(String schedule) {
+<span class="fc" id="L70">		this.schedule = schedule;</span>
+<span class="fc" id="L71">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

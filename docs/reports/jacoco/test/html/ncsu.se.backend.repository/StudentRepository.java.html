@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StudentRepository.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">ncsu.se.backend.repository</a> &gt; <span class="el_source">StudentRepository.java</span></div><h1>StudentRepository.java</h1><pre class="source lang-java linenums">package ncsu.se.backend.repository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.sql.Types;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.aop.framework.adapter.DefaultAdvisorAdapterRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Repository;
+
+import ncsu.se.backend.model.DefaulterDetails;
+import ncsu.se.backend.model.MealRecords;
+import ncsu.se.backend.model.StudentDetails;
+
+@Repository
+<span class="fc" id="L27">public class StudentRepository {</span>
+
+	@Autowired
+	private JdbcTemplate jdbctemplate;
+
+<span class="fc" id="L32">	List&lt;DefaulterDetails&gt; ldd = new ArrayList();</span>
+
+<span class="fc" id="L34">	Date date = new Date(System.currentTimeMillis());</span>
+
+	public List&lt;StudentDetails&gt; getStudentDetailsFromDB(int sid) {
+<span class="fc" id="L37">		String sql = &quot;select * from student_detail where id = ?&quot;;</span>
+<span class="fc" id="L38">		return jdbctemplate.query(sql, new Object[] { sid }, new RowMapper&lt;StudentDetails&gt;() {</span>
+
+			@Override
+			public StudentDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
+<span class="fc" id="L42">				StudentDetails sd = new StudentDetails();</span>
+<span class="fc" id="L43">				sd.setId(sid);</span>
+<span class="fc" id="L44">				sd.setFirst_name(rs.getString(&quot;first_name&quot;));</span>
+<span class="fc" id="L45">				sd.setLast_name(rs.getString(&quot;last_name&quot;));</span>
+<span class="fc" id="L46">				sd.setEmployed_store(rs.getString(&quot;employed_store&quot;));</span>
+<span class="fc" id="L47">				sd.setEmployer_name(rs.getString(&quot;employer_name&quot;));</span>
+<span class="fc" id="L48">				sd.setSchedule(rs.getString(&quot;schedule&quot;).toString());</span>
+
+<span class="fc" id="L50">				return sd;</span>
+			}
+		});
+
+	}
+
+	public String addMealRecord(MealRecords mr) {
+<span class="fc" id="L57">		String sql = &quot;Insert into meal_info (id, Meal_cost, Meal_timestamp, Meal_store) values (?,?,?,?)&quot;;</span>
+<span class="fc" id="L58">		Timestamp timestamp = new Timestamp(System.currentTimeMillis());</span>
+
+<span class="fc" id="L60">		Object[] params = new Object[] { mr.getSid(), mr.getMeal_cost(), timestamp, mr.getMeal_store() };</span>
+<span class="fc" id="L61">		int[] types = new int[] { Types.INTEGER, Types.NUMERIC, Types.TIMESTAMP, Types.VARCHAR };</span>
+
+<span class="fc" id="L63">		jdbctemplate.update(sql, params, types);</span>
+<span class="fc" id="L64">		return &quot;Added Meal successfully&quot;;</span>
+	}
+
+	public List&lt;DefaulterDetails&gt; generateDefaultersStudents() {
+<span class="fc" id="L68">		List&lt;Integer&gt; defaulterIds = getDefaulterIds();</span>
+		DefaulterDetails dd;
+<span class="fc" id="L70">		String selectDefaultSql = &quot;select * from student_detail&quot;;</span>
+
+<span class="fc" id="L72">		String sql = &quot;select * from student_detail where id = ?&quot;;</span>
+<span class="fc" id="L73">		return jdbctemplate.query(selectDefaultSql, new RowMapper&lt;DefaulterDetails&gt;() {</span>
+
+			@Override
+			public DefaulterDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
+<span class="fc" id="L77">				DefaulterDetails dd = new DefaulterDetails();</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">				if (defaulterIds.contains(rs.getInt(&quot;id&quot;))) {</span>
+<span class="fc" id="L79">					dd.setSid(rs.getInt(&quot;id&quot;));</span>
+<span class="fc" id="L80">					dd.setName(rs.getString(&quot;first_name&quot;) + &quot; &quot; + rs.getString(&quot;last_name&quot;));</span>
+<span class="fc" id="L81">					dd.setEmployee_head(rs.getString(&quot;employer_name&quot;));</span>
+<span class="fc" id="L82">					dd.setEmployee_store(rs.getString(&quot;employed_store&quot;));</span>
+<span class="pc bpc" id="L83" title="1 of 4 branches missed.">					if (!checkShiftVisited(dd.getSid()) &amp;&amp; fetchTotalHoursForId(dd.getSid()) &gt; 20) {</span>
+<span class="nc" id="L84">						dd.setDefaulterReason(&quot;Violated all the rules&quot;);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">					} else if (!checkShiftVisited(dd.getSid())) {</span>
+<span class="fc" id="L86">						dd.setDefaulterReason(&quot;No Shift Visited&quot;);</span>
+					} else {
+<span class="fc" id="L88">						dd.setDefaulterReason(&quot;Weekly limit of hours crossed&quot;);</span>
+					}
+
+<span class="fc" id="L91">					return dd;</span>
+				} else
+<span class="fc" id="L93">					return null;</span>
+
+			}
+		});
+	}
+
+	public int fetchTotalHoursForId(int sid) {
+<span class="fc" id="L100">		int sum = 0;</span>
+<span class="fc" id="L101">		List&lt;Map&lt;String, Object&gt;&gt; HoursList = new ArrayList();</span>
+<span class="fc" id="L102">		String selectSql = &quot;Select total_hours from clock_logs where id = ?&quot;;</span>
+
+<span class="fc" id="L104">		HoursList = jdbctemplate.queryForList(selectSql, new Object[] { sid });</span>
+
+<span class="fc" id="L106">		List&lt;Integer&gt; hours = jdbctemplate.query(selectSql, new Object[] { sid }, new RowMapper&lt;Integer&gt;() {</span>
+			@Override
+			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+<span class="fc" id="L109">				int val = rs.getInt(&quot;total_hours&quot;);</span>
+<span class="fc" id="L110">				return val;</span>
+			}
+		});
+<span class="fc bfc" id="L113" title="All 2 branches covered.">		for (int val : hours) {</span>
+<span class="fc" id="L114">			sum += val;</span>
+<span class="fc" id="L115">		}</span>
+<span class="fc" id="L116">		return sum;</span>
+	}
+
+	public List&lt;Integer&gt; getIdsFromMealInfo() {
+<span class="fc" id="L120">		String selectSql = &quot;SELECT id FROM meal_info WHERE DATE(?) = CURRENT_DATE&quot;;</span>
+<span class="fc" id="L121">		return jdbctemplate.query(selectSql, new Object[] { date }, new RowMapper&lt;Integer&gt;() {</span>
+			@Override
+			public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+<span class="fc" id="L124">				return rs.getInt(&quot;id&quot;);</span>
+			}
+		});
+	}
+
+	public boolean checkShiftVisited(int sid) {
+<span class="fc" id="L130">		String countsql = &quot;Select Count(*) from clock_logs where id = ?&quot;;</span>
+<span class="fc" id="L131">		int count = this.jdbctemplate.queryForObject(countsql, new Object[] { sid }, Integer.class);</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">		if (count &gt; 0) {</span>
+<span class="fc" id="L133">			return true;</span>
+		}
+<span class="fc" id="L135">		return false;</span>
+	}
+
+	public List&lt;Integer&gt; getDefaulterIds() {
+<span class="fc" id="L139">		List&lt;Integer&gt; ids = getIdsFromMealInfo();</span>
+<span class="fc" id="L140">		List&lt;Integer&gt; defaulterIds = new ArrayList();</span>
+
+<span class="fc bfc" id="L142" title="All 2 branches covered.">		for (int id : ids) {</span>
+<span class="fc bfc" id="L143" title="All 4 branches covered.">			if (!checkShiftVisited(id) || fetchTotalHoursForId(id) &gt; 20) {</span>
+<span class="fc" id="L144">				defaulterIds.add(id);</span>
+			}
+
+<span class="fc" id="L147">		}</span>
+
+<span class="fc" id="L149">		return defaulterIds;</span>
+
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
