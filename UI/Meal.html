@@ -1,7 +1,7 @@
 <html ng-app='scartApp'>
 <head>
   <meta charset="UTF-8">
-  <title>Campus Enterprise Login Page</title>
+  <title>Restaurant Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -14,7 +14,7 @@
   margin: auto;
   padding: 20px;
   color: white;
-  
+
 }
 
   input{
@@ -68,8 +68,8 @@ li a:hover {
 }
 
 .button2 {
-  background-color: white; 
-  color: black; 
+  background-color: white;
+  color: black;
   border: 2px solid #008CBA;
 }
 
@@ -88,12 +88,12 @@ li a:hover {
 
 
   <form style="color: white; padding-left: 40%; padding-top: 5%;">
-    <label for="sid">Student ID:</label> 
+    <label for="sid">Student ID:</label>
     <input type="text" id="SID" name="sid" ng-model="SID"><br><br>
     <label for="Sname">Store name:</label>
     <input type="text" id="SName" name="SName" ng-model = "SName">
   </form>
-  
+
 
 <h1 style="padding-left: 40%; color: white;">Food Menu</h1>
 <div>
@@ -134,7 +134,7 @@ $scope.items = [
 $scope.selectedItems = [];
 
 $scope.add = function(number) {
-  
+
   $scope.total =  $scope.total+$scope.items[number].price*$scope.items[number].quantity;
   $scope.selectedItems.push($scope.items[number]);
 }
