@@ -125,6 +125,3 @@ Please see our CONTRIBUTING.md for instructions on how to contribute to the repo
 # License
 
 This project is licensed under the MIT License
-
-
-
