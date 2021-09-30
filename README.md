@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 [![DOI](https://zenodo.org/badge/409424195.svg)](https://zenodo.org/badge/latestdoi/409424195)
 
-[![Build Status](https://img.shields.io/github/issues-pr/HarshBathija/Employee-Meal-Tracking-Assistant/workflows/Manual Action/badge.svg)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions)
+[![Action Status](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/workflows/Manual Action/badge.svg)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions)
 ![GitHub language count](https://img.shields.io/github/languages/count/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub commits](https://badgen.net/github/last-commit/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/HarshBathija/Employee-Meal-Tracking-Assistant)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant)
