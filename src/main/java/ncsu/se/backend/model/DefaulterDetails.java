@@ -4,7 +4,25 @@ public class DefaulterDetails {
     private int sid;
     private String name;
     private String dept;
-    private String totalHours;
+    private String employee_store;
+    private String employee_head;
+
+    public String getEmployee_store() {
+        return employee_store;
+    }
+
+    public void setEmployee_store(String employee_store) {
+        this.employee_store = employee_store;
+    }
+
+    public String getEmployee_head() {
+        return employee_head;
+    }
+
+    public void setEmployee_head(String employee_head) {
+        this.employee_head = employee_head;
+    }
+
     private String defaulterReason;
 
     public String getDefaulterReason() {
@@ -39,12 +57,5 @@ public class DefaulterDetails {
         this.dept = dept;
     }
 
-    public String getTotalHours() {
-        return totalHours;
-    }
-
-    public void setTotalHours(String totalHours) {
-        this.totalHours = totalHours;
-    }
 
 }
