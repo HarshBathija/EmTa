@@ -1,70 +1,156 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Campus Enterprise Login Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+ <html>
+ <head>
+   <title>Employee Details</title>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+   <script type="text/javascript" src="Controllers/employeeController.js"></script>
 
-</head>
-<body style="background-image: url('2library001.jpeg');">
-<!-- partial:index.partial.html -->
-<div class="container" ng-app="myApp" style = "text-align:center">
-  <div style="padding-top:5%">
-    <div ng-init="myVar = 'ncstate-brick-2x1-red.png'">
-      <img ng-src="{{myVar}}">
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-        
+  
+<style>
+    table, th, td {
+  border: 1px solid white;
+  margin: auto;
+  padding: 20px;
+  color: white;
+  background-color: #a73b3b;
+}
+
+  input{
+    color: black;
+  }
+
+  button{
+    color: black;
+  }
+  body {
+     background-image: url('img/food-menu-background.jpeg');
+     margin: 0px;
+  }
+
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #161656;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #16b5ae;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+input[type=text] {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+   </style>
+ </head>
+ <body style="background-color: cadetblue;background-image: url('img/2library001.jpeg')">
+  <ul>
+    <li><a class="active" href="Employee_Details.html">Employee Details</a></li>
+    <li><a href="Meal.html">Meal Selection</a></li>
+    <li><a href="Defaulter.html">Defaulters</a></li>
+  </ul>
+
+    <script type="text/javascript">
+        var app = angular.module('MyApp', [])
+        app.controller('MyController', function ($scope, $http) {
+            $scope.ShowAlert = function () {
+                console.log($scope.Name);
+                let x = $scope.Name;
+                let y = "https://meal-tracking-assistant.herokuapp.com/studentDetails?sid="
+                let res = y.concat(x);
+                console.log(res);
+                $http.get(res)
+   .success(function(data){
+     console.log(data)
+     $scope.studentDetails = data;
+     console.log(studentDetails)
+   })
+   .error(function(data,status){
+     console.error('Fail to load data', status, data);
+     $scope.studentDetails = { };
+   });
+            }
+        });
+    </script>
+
+
+    <div ng-app="MyApp" ng-controller="MyController" style = "text-align:center">
+      <div style="padding-top:5%;">
+        <div ng-init="myVar = 'img/ncstate-brick-2x1-red.png'">
+          <img ng-src="{{myVar}}">
       </div>
+      <p style="color: #a73b3b; font-size: xx-large; width: 30%;margin-left: 35%;">Employee Information</p></div>
+        <p style="padding-top: 1%;color: #a73b3b;font-size:16px;">Student_ID:
+        <input type="text" ng-model="Name" placeholder="Student ID" />
+        <br />
+        <br />
+        <input type="button" value="Fetch Details"  class="button button2" ng-click="ShowAlert()" style="margin-left: 5%;" />
+
+        
+        <div align="center" style="color:white;">
+         
+          
+          <table align="center" border="1">
+            <tr>
+              
+              <th>first_name</th>
+              <th>last_name</th>
+              <th>employed_store</th>
+              <th>employer_name</th>
+              <th>schedule</th>
+            </tr>
+            <tr ng-repeat="student in studentDetails">
+              <td>{{student.first_name}}</td>
+              <td>{{student.last_name}}</td>
+              <td>{{student.employed_store}}</td>
+              <td>{{student.employer_name}}</td>
+              <td>{{student.schedule}}</td>    
+            </tr>
+          </table>
+        
     </div>
-    
-    <div ui-view></div>
-    
-  </div>
-  
-  <script type="text/ng-template" id="login.html">
-    <div class="col-md-12" style = "margin: 5%;padding-left: 25%;">
-      <h3 style = "padding-right: 45%"> Employee - Dining Login Page</h3>
-      
-      <form ng-submit="formSubmit()" class="form" style = "padding-left: 10%">
-        <div class="col-md-4">
-          <div class="form-group" style= "padding-left: 10%;padding-top: 5%">
-            <input type="text" class="form-control" ng-model="StudentID" placeholder="StudentID" required=""/>
-          </div> 
 
-          <div class="form-group" style= "padding-left: 10%">
-            <input type="password" class="form-control" ng-model="EmployeeName"  placeholder="EmployeeName" required=""/>
-          </div>
-
-          <div class="form-group" style= "padding-left: 10%">
-            <input type="password" class="form-control" ng-model="Store"  placeholder="Store" required=""/>
-          </div>
-
-          <div class="form-group" style= "padding-left: 15%">
-            <button type="submit" class="btn btn-success">Login</button>
-            <span class="text-danger">{{ error }}</span>
-          </div>
-
-        </div>
-      </form>
-    </div>
-  </script>
-  
-  <script type="text/ng-template" id="home.html">
-    <div class="col-md-12">
-      <h3>Home Page</h3>
-    
-      <a ui-sref="login">Back</a>
-    </div>
-  </script>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js'></script><script  src="./script.js"></script>
-
-</body>
-</html>
+   
+ </body>
+ </html>
