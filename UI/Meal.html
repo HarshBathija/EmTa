@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="Javascript/SCartController.js"></script>
 <title>Cart</title>
 </head>
 <style>
@@ -24,7 +25,7 @@
     color: black;
   }
   body {
-     background-image: url('food-menu-background.jpeg');
+     background-image: url('img/food-menu-background.jpeg');
   }
 
 
@@ -51,6 +52,31 @@ li a {
 li a:hover {
   background-color: #16b5ae;
 }
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
 </style>
 
 <body ng-controller='SCartController'>
@@ -58,15 +84,15 @@ li a:hover {
     <li><a href="index.html">Login</a></li>
     <li><a href="Employee_Details.html">Employee Details</a></li>
     <li><a class="active" href="Meal.html">Meal Selection</a></li>
-    <li><a href="#about">Defaulters</a></li>
+    <li><a href="Defaulter.html">Defaulters</a></li>
   </ul>
 
 
   <form style="color: white; padding-left: 40%; padding-top: 5%;">
     <label for="sid">Student ID:</label> 
-    <input type="text" id="SID" name="sid"><br><br>
+    <input type="text" id="SID" name="sid" ng-model="SID"><br><br>
     <label for="Sname">Store name:</label>
-    <input type="text" id="SName" name="Sname">
+    <input type="text" id="SName" name="SName" ng-model = "SName">
   </form>
   
 
@@ -85,13 +111,17 @@ li a:hover {
 <td><input ng-model='item.quantity'></td>
 <td>{{item.price | currency}}</td>
 <td> {{item.price * item.quantity | currency}}</td>
-<td><button ng-click="add($number)">Add to cart</button></td>
+<td><button class = "button button2" ng-click="add($index)">Add to cart</button></td>
 </tr>
 </table>
+<p style="color: white; text-align: center;padding-top: 5px;">Total Cost: {{total}}</p>
 </div>
 <script>
 var sapp = angular.module('scartApp', []);
 sapp.controller('SCartController', ['$scope', function($scope) {
+  $scope.SID = '';
+  $scope.SName = "";
+  $scope.total = 0;
 $scope.items = [
 {Name: 'French Fries', quantity: 1, price: 3},
 {Name: 'Spinach Veggie Wrap', quantity: 1, price: 5},
@@ -102,18 +132,47 @@ $scope.items = [
 {Name: 'Soft Drink', quantity:1, price: 2.5},
 {Name: 'Black Bean Burger', quantity:1, price: 7}
 ];
+$scope.selectedItems = [];
 
 $scope.add = function(number) {
-  $scope.items.data.push({
-      price: item.price * item.quantity
-    });
+  
+  $scope.total =  $scope.total+$scope.items[number].price*$scope.items[number].quantity;
+  $scope.selectedItems.push($scope.items[number]);
+}
+/*$scope.send = function(){
+
+  console.log($scope.SID);
+  console.log($scope.SName);
+  console.log($scope.total);
+
+  //$http.post('https://meal-tracking-assistant.herokuapp.com/updateMealRecord', {'sid' :$scope.SID, 'meal_cost': $scope.total, 'meal_store' :$scope.SName })
+  //.success(function(response) {$scope.userData = response.users; $scope.message = response.message;});
+
+}*/
+
+$scope.send = function(SID, total, SName,$http){
+
+var data = {
+
+    sid : SID,
+    meal_cost: total,
+    meal_store: SName
+
+}
+console.log(data);
+$http.post("https://meal-tracking-assistant.herokuapp.com/updateMealRecord", data)
+        .then(function(response){
+                console.log(response);
+        })
+
 }
 }]);
 </script>
+
 </body>
-</html><button ng-click="add($index)" style="margin-left: 50%; margin-top: 1%;">Add</button>
+</html><button class ="button button2"ng-click="send(SID,total,SName,$http)" style="margin-left: 50%; margin-top: 1%;">Add</button>
 </div>
-<script src="angular.js"></script>
+<script src="Javascript/angular.js"></script>
 <script>
 
 </script>

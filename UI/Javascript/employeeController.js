@@ -1,6 +1,7 @@
-var employeeAppModule = angular.module("myApp", []);
+var employeeAppModule = angular.module("employeeApp", []);
  employeeAppModule.controller("employeeCtrl", function ($scope,$http) {
-   $http.get('https://meal-tracking-assistant.herokuapp.com/studentDetails?sid=200099333')
+    
+   $http.get('https://meal-tracking-assistant.herokuapp.com/studentDetails?$scope.StudentID')
    .success(function(data){
      console.log(data)
      $scope.studentDetails = data;
