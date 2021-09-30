@@ -10,11 +10,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.aop.framework.adapter.DefaultAdvisorAdapterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import ncsu.se.backend.model.DefaulterDetails;
@@ -27,12 +29,12 @@ public class StudentRepository {
 	@Autowired
 	private JdbcTemplate jdbctemplate;
 
+	List<DefaulterDetails> ldd = new ArrayList();
+
 	Date date = new Date(System.currentTimeMillis());
 
 	public List<StudentDetails> getStudentDetailsFromDB(int sid) {
-
 		String sql = "select * from student_detail where id = ?";
-
 		return jdbctemplate.query(sql, new Object[] { sid }, new RowMapper<StudentDetails>() {
 
 			@Override
@@ -48,14 +50,15 @@ public class StudentRepository {
 				return sd;
 			}
 		});
+
 	}
 
 	public String addMealRecord(MealRecords mr) {
-		String sql = "Insert into meal_info (M_id, id, Meal_cost, Meal_timestamp, Meal_store) values (?,?,?,?,?)";
+		String sql = "Insert into meal_info (id, Meal_cost, Meal_timestamp, Meal_store) values (?,?,?,?)";
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-		Object[] params = new Object[] { mr.getMid(), mr.getSid(), mr.getMeal_cost(), timestamp, mr.getMeal_store() };
-		int[] types = new int[] { Types.INTEGER, Types.INTEGER, Types.NUMERIC, Types.TIMESTAMP, Types.VARCHAR };
+		Object[] params = new Object[] { mr.getSid(), mr.getMeal_cost(), timestamp, mr.getMeal_store() };
+		int[] types = new int[] { Types.INTEGER, Types.NUMERIC, Types.TIMESTAMP, Types.VARCHAR };
 
 		jdbctemplate.update(sql, params, types);
 		return "Added Meal successfully";
@@ -107,12 +110,10 @@ public class StudentRepository {
 				return val;
 			}
 		});
-
 		for (int val : hours) {
 			sum += val;
 		}
 		return sum;
-
 	}
 
 	public List<Integer> getIdsFromMealInfo() {
