@@ -30,6 +30,9 @@ class DemoApplicationTests {
 	@Autowired
 	private StudentController studentcont;
 
+	@Autowired
+	private StudentRepository studentrepo;
+	
 	@Test
 	public void test_getStudentDetails() throws Exception {
 		System.out.println("Testing Student Details...\n");
@@ -68,6 +71,25 @@ class DemoApplicationTests {
 		
 		Assertions.assertTrue(listdd != null);
 				
+		
+	}
+	
+	@Test
+	public void test_TotalHours() throws Exception {
+		System.out.println("Testing calculation of total hours...\n");
+		int val = studentrepo.fetchTotalHoursForId(200099333);
+		Assertions.assertTrue(val ==  (int)val);		
+		
+	}
+	
+	@Test
+	public void test_getDefaulterIds() throws Exception {
+		System.out.println("Testing generation of defaulter IDs...\n");
+		
+		List<Integer> id_list = new ArrayList();
+		id_list = studentrepo.getDefaulterIds();
+		System.out.print(id_list);
+		Assertions.assertTrue(!id_list.isEmpty());		
 		
 	}
 	
