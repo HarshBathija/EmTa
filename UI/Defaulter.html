@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>Defaulter Details</title>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+   <script type="text/javascript" src="Controllers/defaulterController.js"></script>
+
+   <style>
+    table, th, td {
+  border: 1px solid white;
+  margin: auto;
+  padding: 20px;
+  color: white;
+  background-color: #a73b3b;
+  
+}
+
+  input{
+    color: black;
+  }
+
+  button{
+    color: black;
+  }
+  body {
+     margin: 0px;
+  }
+
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #161656;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #16b5ae;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+
+ </head>
+ <body ng-app="DefaulterApp" style="background-color: cadetblue;background-image: url('img/2library001.jpeg')">
+    
+    <ul>
+        <li><a href="Employee_Details.html">Employee Details</a></li>
+        <li><a href="Meal.html">Meal Selection</a></li>
+        <li><a class="active" href="Defaulter.html">Defaulters</a></li>
+      </ul>
+
+      <div class="container" ng-app="myApp" style = "text-align:center">
+        <div style="padding-top:5%">
+          <div ng-init="myVar = 'img/ncstate-brick-2x1-red.png'">
+            <img ng-src="{{myVar}}">
+        </div>
+    </div>
+
+    <div align="center"><p style="color: crimson; font-size: xx-large;"><b>Defaulter Information</b></p></div>
+   <div ng-controller="DeftCtrl">
+     <table align="center" border="1">
+       <tr>
+         <th>sid</th>
+         <th>first_name</th>
+         <th>last_name</th>
+         <th>employed_store</th>
+         <th>employer_name</th>
+         <th>DefaulterReason</th>
+       </tr>
+       <tr ng-repeat="student in defaulterList">
+         <td>{{student.sid}}</td>
+         <td>{{student.name}}</td>
+         <td>{{student.dept}}</td>
+         <td>{{student.employee_store}}</td>
+         <td>{{student.employee_head}}</td>
+         <td>{{student.DefaulterReason}}</td>
+       </tr>
+     </table>
+   </div>
+ </body>
+ </html>
