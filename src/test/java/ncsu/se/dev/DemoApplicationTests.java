@@ -13,8 +13,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 
 import ncsu.se.backend.DemoApplication;
+import ncsu.se.backend.controller.StudentController;
+import ncsu.se.backend.model.DefaulterDetails;
 import ncsu.se.backend.model.MealRecords;
 import ncsu.se.backend.model.StudentDetails;
+import ncsu.se.backend.repository.StudentRepository;
 import ncsu.se.backend.service.StudentService;
 
 @RunWith(SpringRunner.class)
@@ -23,6 +26,9 @@ class DemoApplicationTests {
 	
 	@Autowired
 	private StudentService studentService;
+	
+	@Autowired
+	private StudentController studentcont;
 
 	@Test
 	public void test_getStudentDetails() throws Exception {
@@ -39,14 +45,29 @@ class DemoApplicationTests {
 		Assertions.assertEquals(200099333,sd.getId());
 		
 	}
-
+	
+//	
+//	@Test
+//	public void test_addMealRecord() throws Exception {
+//		System.out.println("Testing Addition of Meal Details...\n");
+//		MealRecords mr = new MealRecords(200099333, 6, "JasonDeli");
+//		
+//		String res = "Added Meal successfully";
+//		Assertions.assertEquals(res,studentService.updateMealRecords(mr));
+//		
+//	}
+//	
+	
 	@Test
-	public void test_addMealRecord() throws Exception {
-		System.out.println("Testing Addition of Meal Details...\n");
-		MealRecords mr = new MealRecords(200099333, 6, "JasonDeli");
+	public void test_getDefualter() throws Exception {
+		System.out.println("Testing generation of Defaulters List...\n");
+		DefaulterDetails dd = new DefaulterDetails();
+		List<DefaulterDetails> listdd = new ArrayList();
 		
-		String res = "Added Meal successfully";
-		Assertions.assertEquals(res,studentService.updateMealRecords(mr));
+		listdd = studentcont.getDefaultersList();
+		
+		Assertions.assertTrue(listdd != null);
+				
 		
 	}
 	
