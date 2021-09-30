@@ -1,0 +1,16 @@
+This document gives a detailed information on the file structure of the User Interface of the Employee-Meal-Tracking-Assistant and API calls through UI to the backend.
+The project is a web-application. It has three major parts: front-end, back-end and database.
+Front - end is done using AngularJS.
+Back-end is done using Java and Spring Framework
+Database is maintained by PostgreSQL
+We connect our backend and frontend with the help of API calls from AngularJS controllers.
+
+We have .html files for the feel and look of front end. We have all Controller Files in the Controllers folder. We have the appropriate controllers depending on the functionalities they perform. According to the functionality of the project, we have
+- Employee_Details.html: This page asks the admin of the system to enter the Student id in order to fetch student employment details. It has a button named  "Fetch Details" which when clicked, triggers a call to the API handling the Employee details and displays the details received from API call in a table on the same page.
+- employeeController.js: This is the Controller defined to handle the button click and making of API call. We used the $http - get method to make a call to the API, fetch details and return them in a table on Employee_Details.html.
+- Meal.html: This html page allows administrator of the system to log the meal ordering details of the particular student by entering their Student id and name of the store from where meal is taken.
+- SCartController.html: This controller, is used to call the $http-post method to store the employee meal details to the database with help of API call. With a click on "Add" button on Meal.html page, this Controller is invoked, $http's POST gets executed and the passed data is stored into the backend.
+- Defaulter.html: This page displays the list of people with their names and other details along with a reason stating why there is a violation in their employee meal records.
+- defaulterController.js: This makes a call to the DefaultersList API using the AngularJS, $http.get and fetches the details from the backend.
+
+We have used internal CSS for the basic aesthetic of our webpages.
