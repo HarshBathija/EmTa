@@ -106,8 +106,8 @@ Response :- "App is Running"
 ```
 
 ---
-##[Link to the UI Code and documentation](https://github.com/HarshBathija/EmTa/tree/master/UI)
-
+[Link to the UI Code and documentation](https://github.com/HarshBathija/EmTa/tree/master/UI)
+---
 
 # Future Roadmap
 
