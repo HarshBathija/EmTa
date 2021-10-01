@@ -84,7 +84,7 @@ Note : Make sure you have a docker desktop or docker client installed on your sy
 
 1. Clone the repository
 ```
-git clone https://github.com/HarshBathija/Meal-Tracking-Assistant.git
+git clone https://github.com/HarshBathija/EmTa.git
 ```
 2. Go the the repository
 ```
