@@ -3,7 +3,10 @@
 
 
 
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+
 [![DOI](https://zenodo.org/badge/409424195.svg)](https://zenodo.org/badge/latestdoi/409424195)
 
 [![Manual Action](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions/workflows/release.yml/badge.svg)](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions/workflows/release.yml)
@@ -25,18 +28,10 @@ This project is an automated system designed for the University’s Dining Depar
 
 This system provides the administrator with the list of employees who did not follow their respective dining meal rules.
 
-
----
-
-The below video will give a walkthrough of our application.
+The below video will give a walkthrough of our  web application.
 
 
-
-
-
-https://user-images.githubusercontent.com/42272328/135556422-ad127c96-e483-4d15-acd6-f06bd41b985b.mp4
-
-
+[Web Application Video](https://user-images.githubusercontent.com/42272328/135556422-ad127c96-e483-4d15-acd6-f06bd41b985b.mp4)
 
 
 ---
@@ -110,7 +105,12 @@ Response :- "App is Running"
 ```
 
 ---
-[Link to the UI Code and documentation](https://github.com/HarshBathija/EmTa/tree/master/UI)
+# UI Code and Documentation
+
+[UI Code](https://github.com/HarshBathija/EmTa/tree/master/UI)
+
+[UI Documentation](https://github.com/HarshBathija/EmTa/tree/master/UI%20documentation)
+
 ---
 
 # Future Roadmap
