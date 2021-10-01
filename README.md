@@ -66,7 +66,7 @@ git clone https://github.com/HarshBathija/EmTa.git
 ```
 2. Go the the repository
 ```
-cd Meal-Tracking-Assistant
+cd EmTa
 ```
 3. Run the gradle build command to make sure you have all the dependencies installed.
 ```
@@ -88,15 +88,15 @@ git clone https://github.com/HarshBathija/EmTa.git
 ```
 2. Go the the repository
 ```
-cd Meal-Tracking-Assistant
+cd EmTa
 ```
 3. Run the docker build command
 ```
-docker build --tag employee-meal-tracking-assistant:1.0 .
+docker build --tag EmTa:1.0 .
 ```
 4. Run the built docker image on local Container
 ```
-docker run -dp 8080:8080 employee-meal-tracking-assistant:1.0
+docker run -dp 8080:8080 EmTa:1.0
 ```
 
 5. Test the backend application using below api
