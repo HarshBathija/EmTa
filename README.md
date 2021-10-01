@@ -1,4 +1,4 @@
-# Employee Meal Tracking Assistant
+# EmTa -  Employee Meal Tracking Assistant
 
 
 
@@ -62,11 +62,11 @@ NOTE: Make sure you have git, any IDE(VScode or Eclipse) and Gradle wrapper inst
 
 1. Clone the repository
 ```
-git clone https://github.com/HarshBathija/Meal-Tracking-Assistant.git
+git clone https://github.com/HarshBathija/EmTa.git
 ```
 2. Go the the repository
 ```
-cd Meal-Tracking-Assistant
+cd EmTa
 ```
 3. Run the gradle build command to make sure you have all the dependencies installed.
 ```
@@ -84,19 +84,19 @@ Note : Make sure you have a docker desktop or docker client installed on your sy
 
 1. Clone the repository
 ```
-git clone https://github.com/HarshBathija/Meal-Tracking-Assistant.git
+git clone https://github.com/HarshBathija/EmTa.git
 ```
 2. Go the the repository
 ```
-cd Meal-Tracking-Assistant
+cd EmTa
 ```
 3. Run the docker build command
 ```
-docker build --tag employee-meal-tracking-assistant:1.0 .
+docker build --tag EmTa:1.0 .
 ```
 4. Run the built docker image on local Container
 ```
-docker run -dp 8080:8080 employee-meal-tracking-assistant:1.0
+docker run -dp 8080:8080 EmTa:1.0
 ```
 
 5. Test the backend application using below api
@@ -105,6 +105,8 @@ GET localhost:8080/healthCheck
 Response :- "App is Running"
 ```
 
+---
+[Link to the UI Code and documentation](https://github.com/HarshBathija/EmTa/tree/master/UI)
 ---
 
 # Future Roadmap
