@@ -31,7 +31,9 @@ This system provides the administrator with the list of employees who did not fo
 The below video will give a walkthrough of our  web application.
 
 
-[Web Application Video](https://user-images.githubusercontent.com/42272328/135556422-ad127c96-e483-4d15-acd6-f06bd41b985b.mp4)
+
+[Web Application Video](https://user-images.githubusercontent.com/37671963/135559964-548c5781-fa68-4570-9f01-047a9e651db1.mp4)
+
 
 
 ---
