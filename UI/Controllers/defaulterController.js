@@ -8,7 +8,7 @@ DefaulterModule.controller("DeftCtrl", function ($scope,$http) {
        return obj != null;
 
      }
-     
+
      data = data.filter(checkAdult);
 
      $scope.defaulterList = data;
