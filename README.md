@@ -62,7 +62,7 @@ NOTE: Make sure you have git, any IDE(VScode or Eclipse) and Gradle wrapper inst
 
 1. Clone the repository
 ```
-git clone https://github.com/HarshBathija/Meal-Tracking-Assistant.git
+git clone https://github.com/HarshBathija/EmTa.git
 ```
 2. Go the the repository
 ```
