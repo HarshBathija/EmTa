@@ -107,6 +107,19 @@ Response :- "App is Running"
 
 ---
 
+# Future Roadmap
+
+Phase 2
+ - Adding other resturants along with their respective menus, and integrating it with our system.
+ - User Interface for fetching student's clock-in and clock-out time at the respective work location.
+ - Sending auto generated report to respective employer's supervisor.
+
+Phase 3
+ - Configuring card scanning functionality to get student details.
+ - Extending this system to various Student Employee Services in different universities.
+
+---
+
 # Authors
 
 1. Aditya Ravikant Jadhav (ajadhav3@ncsu.edu)
