@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
+    
+    @CrossOrigin
+    @GetMapping("/healthCheck")
+    public String getHealthCheck() {
+        return "App is running";
+    }
 
     @CrossOrigin
     @GetMapping("/login")
