@@ -115,10 +115,19 @@ Response :- "App is Running"
 
 ---
 
+# Code Coverage
+
+[Code Coverage](https://github.com/HarshBathija/EmTa/tree/master/docs/reports/jacoco/test/html)
+
+<img width="1047" alt="Screenshot 2021-10-06 at 10 41 39 AM" src="https://user-images.githubusercontent.com/37671963/136242897-bf40eadd-865f-4563-a8f6-0e0090e1b0e7.png">
+
+---
+
 # Future Roadmap
 
 Phase 2
  - Adding other resturants along with their respective menus, and integrating it with our system.
+ - Improve UI of the system
  - User Interface for fetching student's clock-in and clock-out time at the respective work location.
  - Sending auto generated report to respective employer's supervisor.
 
