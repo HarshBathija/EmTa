@@ -12,7 +12,7 @@
 |Docs: what: point descriptions of each class/function (in isolation)|3|[Doc](https://github.com/HarshBathija/EmTa/blob/master/docs/EmTa_Documentation.pdf)|
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|[Doc](https://github.com/HarshBathija/EmTa/blob/master/docs/EmTa_Documentation.pdf)|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|[ReadMe](https://github.com/HarshBathija/EmTa/blob/master/README.md)|
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|[ReadMe]]|
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|[Application Video](https://user-images.githubusercontent.com/37671963/135559964-548c5781-fa68-4570-9f01-047a9e651db1.mp4)|
 |Use of version control tools|3|We are using Github as the Version Control|
 |Use of style checkers|3| We have used CheckStyle library and configuration will be found [here](https://github.com/HarshBathija/EmTa/blob/master/src/main/config/checkstyle/checkstyle.xml)|
 |Use of code formatters.|3|We have used CheckStyle library and configuration will be found [here](https://github.com/HarshBathija/EmTa/blob/master/src/main/config/checkstyle/checkstyle.xml)|
@@ -31,11 +31,11 @@
 |evidence that the members of the team are working across multiple places in the code base|3|[Commits](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/commits/master)|
 |short release cycles|3|https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/releases|
 | Question 1.1: Does your website and documentation provide a clear, high-level overview of your software? | 3 | Readme.md provide clear idea of the application |
-| Question 1.2: Does your website and documentation clearly describe the type of user who should use your software? | 2 | README does provide it |
+| Question 1.2: Does your website and documentation clearly describe the type of user who should use your software? | 2 | README does provide it [ReadMe](https://github.com/HarshBathija/EmTa/blob/master/README.md)|
 | Question 1.3: Do you publish case studies to show how your software has been used by yourself and others? | 0 |  |
 | Question 2.1: Is the name of your project/software unique? * | 2 | Employee-meal-tracking-assistant (EmTa) is not catchy but its unique and clearly defines our application|
 | Question 2.2: Is your project/software name free from trademark violations? * | 3 | EmTa is not used anywhere |
-| Question 3.1: Is your software available as a package that can be deployed without building it?  | 2 | Backend Docker ready, and docker image available at https://hub.docker.com/repository/docker/adi4196/nc-state-dining |
+| Question 3.1: Is your software available as a package that can be deployed without building it?  | 3 | Backend Docker ready, and docker image available at https://hub.docker.com/repository/docker/adi4196/nc-state-dining |
 | Question 3.2: Is your software available for free? | 3 | Available on Github for free and hosted on heroku for free (roadmap item) |
 | Question 3.3: Is your source code publicly available to download, either as a downloadable bundle or via access to a source code repository? | 3 | Source code available at https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant |
 | Question 3.4: Is your software hosted in an established, third-party repository like GitHub (https://github.com), BitBucket (https://bitbucket.org), LaunchPad (https://launchpad.net) or SourceForge (https://sourceforge.net)? | 3 | Its on Github and HerokuGit|
@@ -43,11 +43,11 @@
 | Question 4.2: Does your documentation include a "quick start" guide, that provides a short overview of how to use your software with some basic examples of use? | 3 | Available in GH [ReadMe](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/README.md) file |
 | Question 4.3: If you provide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use your software? | 3 | Available in GH [ReadMe](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/README.md) file |
 | Question 4.4: Do you provide a comprehensive guide to all your software’s commands, functions and options? | 3 | [ReadMe](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/README.md)|
-| Question 4.5: Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? * | 0 | [troubleshoot](https://github.com/HarshBathija/EmTa/blob/master/docs/troubleshoot_issues.pdf) |
-| Question 4.6: If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation? * | 0 | https://github.com/HarshBathija/EmTa/blob/master/docs/API_Documentation.pdf|
+| Question 4.5: Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? * | 3 | [troubleshoot](https://github.com/HarshBathija/EmTa/blob/master/docs/troubleshoot_issues.pdf) |
+| Question 4.6: If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation? * | 3 | https://github.com/HarshBathija/EmTa/blob/master/docs/API_Documentation.pdf|
 | Question 4.7: Do you store your documentation under revision control with your source code? * | 3 | Available in GH |
 | Question 4.8: Do you publish your release history e.g. release data, version numbers, key features of each release etc. on your web site or in your documentation? * | 3 | Available in GH under [GH releases](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/releases), also Available in Heroku under [Heroku releases](https://dashboard.heroku.com/apps/meal-tracking-assistant/activity) |
-| Question 5.1: Does your software describe how a user can get help with using your software? * | 0 |  |
+| Question 5.1: Does your software describe how a user can get help with using your software? * | 2 | https://github.com/HarshBathija/EmTa/blob/master/docs/EmTa_Documentation.pdf |
 | Question 5.2: Does your website and documentation describe what support, if any, you provide to users and developers? * | 1 | [Contribution](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/blob/master/CONTRIBUTING.md) file for developers who would like to make a contribution is provided in GH |
 | Question 5.3: Does your project have an e-mail address or forum that is solely for supporting users? * | 0 | No  |
 | Question 5.4: Are e-mails to your support e-mail address received by more than one person? * | 0 | No |
@@ -71,7 +71,7 @@
 | Question 11.4: Does your documentation list all third-party dependencies? * | 3 | Yes, [link to document](https://github.com/HarshBathija/EmTa/blob/master/build.gradle) |
 | Question 11.5: Does your documentation list the version number for all third-party dependencies? * | 3 | yes | 
 | Question 11.6: Does your software list the web address, and licences for all third-party dependencies and say whether the dependencies are mandatory or optional? * | 0 | No |
-| Question 11.7: Can you download dependencies using a dependency management tool or package manager? * | 0 | yes we can run the gradle tool or ./gradlew command on the root location of the project |
+| Question 11.7: Can you download dependencies using a dependency management tool or package manager? * | 3 | yes we can run the gradle tool or ./gradlew command on the root location of the project |
 | Question 11.8: Do you have tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful? * | 1 | We don't have tests checking after the deployment|
 | Question 12.1: Do you have an automated test suite for your software? * | 3 | [JunitTest task as part of build.gradle on [Github Actions Build workflow](https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant/actions/workflows/release.yml) |
 | Question 12.2: Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code? * | 1 | We dont have all the tests |
