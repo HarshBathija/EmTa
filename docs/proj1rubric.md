@@ -35,7 +35,7 @@
 | Question 1.3: Do you publish case studies to show how your software has been used by yourself and others? | 0 |  |
 | Question 2.1: Is the name of your project/software unique? * | 2 | Employee-meal-tracking-assistant (EmTa) is not catchy but its unique and clearly defines our application|
 | Question 2.2: Is your project/software name free from trademark violations? * | 3 | EmTa is not used anywhere |
-| Question 3.1: Is your software available as a package that can be deployed without building it?  | 2 | Backend Docker ready, and docker image available at location :- to be given|
+| Question 3.1: Is your software available as a package that can be deployed without building it?  | 2 | Backend Docker ready, and docker image available at https://hub.docker.com/repository/docker/adi4196/nc-state-dining |
 | Question 3.2: Is your software available for free? | 3 | Available on Github for free and hosted on heroku for free (roadmap item) |
 | Question 3.3: Is your source code publicly available to download, either as a downloadable bundle or via access to a source code repository? | 3 | Source code available at https://github.com/HarshBathija/Employee-Meal-Tracking-Assistant |
 | Question 3.4: Is your software hosted in an established, third-party repository like GitHub (https://github.com), BitBucket (https://bitbucket.org), LaunchPad (https://launchpad.net) or SourceForge (https://sourceforge.net)? | 3 | Its on Github and HerokuGit|
